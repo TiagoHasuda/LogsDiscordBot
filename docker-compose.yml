@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  prod:
+    container_name: logsDiscordBot
+    build: .
+    ports:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.webmaster.rule=Host(`logsdiscordbot.jameswebserver.com`)
+
+networks:
+  traefik:
+    external:
+      name: traefik
