@@ -1,4 +1,4 @@
-FROM 16.15.0 AS production
+FROM node:16.15.0 AS production
 
 WORKDIR /projects/logsDiscordBot
 
